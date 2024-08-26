@@ -1,0 +1,40 @@
+.expense-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto; /* Esto centra el elemento horizontalmente */
+    width: 40%;
+}
+
+  
+.summary-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    font-size: 18px;
+    color:  #bc5bf9;
+    font-weight: bold;
+}
+  
+  .summary-details {
+    text-align: right;
+  }
+  
+  .summary-details p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .summary-details p strong {
+    color:  #bc5bf9;
+  }
+  

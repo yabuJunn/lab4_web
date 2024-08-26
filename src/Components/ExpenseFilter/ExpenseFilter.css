@@ -1,0 +1,27 @@
+.expense-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    margin: 20px auto;
+    width: 40%;
+  }
+  
+  .expense-filter label {
+    margin-right: 10px;
+    color: #000000;
+    font-size: 14px;
+  }
+  
+  .expense-filter select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 70%;
+  }
+  
