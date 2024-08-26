@@ -1,17 +1,20 @@
-
 import React, { useState } from 'react';
 import './App.css'
-import Start from './screens/Start/Start';
+// import Start from './screens/Start/Start';
 import Second from './screens/Second/Second';
 
 const App: React.FC = () => {
+  //Estado de manejo de pantallas
   const [pageId, setPageId] = useState("Second")
+
+  //Estado del budget
+  const [budget, setBudget] = useState(0)
 
   switch (pageId) {
     case "Start":
       return (
         <div className="app">
-          <Start></Start>
+          <Start setBudget={setBudget}></Start>
         </div>
       );
     case "Second":
