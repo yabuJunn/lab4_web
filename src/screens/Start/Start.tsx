@@ -4,16 +4,18 @@ import React from 'react';
 import Header from '../../Components/Header/Header';
 import BudgetForm from '../../Components/BudgetForm/BudgetForm';
 
-type StartType = {
-  setBudget: 
+interface StartProps {
+  handleBudget: (newBudget: number) => void,
+  actualBudget: number
+
 }
 
-const Start: React.FC = ({ setBudget }: StartType) => {
+const Start = ({ handleBudget, actualBudget }: StartProps) => {
 
   return (
     <div className="screens">
       <Header />
-      <BudgetForm />
+      <BudgetForm handleBudget={handleBudget} actualBudget={actualBudget} />
     </div>
   );
 };
