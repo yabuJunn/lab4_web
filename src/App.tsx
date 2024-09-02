@@ -30,7 +30,7 @@ const App: React.FC = () => {
     case "Second":
       return (
         <div className="app">
-          <Second></Second>
+          <Second handleBudget={HandleBudget} actualBudget={budget} handlePage={HandlePage}></Second>
         </div>
       );
     default:

@@ -8,7 +8,6 @@ interface StartProps {
   handleBudget: (newBudget: number) => void,
   actualBudget: number,
   handlePage: (newPage: string) => void
-
 }
 
 const Start = ({ handleBudget, actualBudget, handlePage }: StartProps) => {

@@ -5,14 +5,19 @@ import ExpenseSummary from '../../Components/ExpenseSummary/ExpenseSumary';
 import ExpenseFilter from '../../Components/ExpenseFilter/ExpenseFilter';
 import ExpenseList from '../../Components/ExpenseList/ExpenseList';
 
+interface SecondProps {
+  handleBudget: (newBudget: number) => void,
+  actualBudget: number,
+  handlePage: (newPage: string) => void
+}
 
-const Second: React.FC = () => {
+const Second = ({ handleBudget, actualBudget, handlePage }: SecondProps) => {
   return (
     <div className="screen">
-      <Header/>
-      <ExpenseSummary/>
-      <ExpenseFilter/>
-      <ExpenseList/>
+      <Header />
+      <ExpenseSummary actualBudget={actualBudget} />
+      <ExpenseFilter />
+      <ExpenseList />
     </div>
   );
 };

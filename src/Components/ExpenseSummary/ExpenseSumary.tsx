@@ -4,7 +4,11 @@ import './ExpenseSummary.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css'
 
-const ExpenseSummary: React.FC = () => {
+interface ExpenseSummaryProps {
+  actualBudget: number
+}
+
+const ExpenseSummary = ({actualBudget}: ExpenseSummaryProps) => {
 
   const percentageExpended: number = 50
 
@@ -23,7 +27,7 @@ const ExpenseSummary: React.FC = () => {
         ></CircularProgressbar>
       </div>
       <div className="summary-details">
-        <p><strong>Budget:</strong> $1.00</p>
+        <p><strong>Budget:</strong>${actualBudget}</p>
         <p><strong>Remaining:</strong> $1.00</p>
         <p><strong>Expense:</strong> $0.00</p>
       </div>

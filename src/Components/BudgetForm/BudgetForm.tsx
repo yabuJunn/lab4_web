@@ -19,7 +19,6 @@ const BudgetForm = ({ handleBudget, actualBudget, handlePage }: BudgetFormProps)
   };
 
   const handleButtonOnClick = () => {
-    console.log("Cliclk")
     handlePage("Second")
   }
 
