@@ -13,6 +13,9 @@ const App: React.FC = () => {
   //Estado del expenses
   const [expenses, setExpenses] = useState(0)
 
+  //Estado del expenses
+  const [showAddExpensesModal, setShowAddExpensesModal] = useState(false)
+
   //Funcion handle state budget
   const HandleBudget = (newBudget: number) => {
     setBudget(newBudget)
@@ -21,6 +24,16 @@ const App: React.FC = () => {
   //Funcion handle state page
   const HandlePage = (newPage: string) => {
     setPageId(newPage)
+  }
+
+  //Funcion handle state page
+  const handleShowAddExpensesModal = () => {
+    if (showAddExpensesModal) {
+      setShowAddExpensesModal(false)
+    } else {
+      setShowAddExpensesModal(true)
+    }
+    console.log(showAddExpensesModal)
   }
 
   switch (pageId) {
@@ -33,7 +46,7 @@ const App: React.FC = () => {
     case "Second":
       return (
         <div className="app">
-          <Second handleBudget={HandleBudget} actualBudget={budget} handlePage={HandlePage}></Second>
+          <Second handleBudget={HandleBudget} actualBudget={budget} handlePage={HandlePage} handleShowAddExpensesModal={handleShowAddExpensesModal}></Second>
         </div>
       );
     default:
