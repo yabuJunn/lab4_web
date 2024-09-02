@@ -16,11 +16,15 @@ const App: React.FC = () => {
     setBudget(newBudget)
   }
 
+  const HandlePage = (newPage: string) => {
+    setPageId(newPage)
+  }
+
   switch (pageId) {
     case "Start":
       return (
         <div className="app">
-          <Start handleBudget={HandleBudget} actualBudget={budget}></Start>
+          <Start handleBudget={HandleBudget} actualBudget={budget} handlePage={HandlePage}></Start>
         </div>
       );
     case "Second":
