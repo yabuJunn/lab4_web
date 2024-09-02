@@ -3,6 +3,23 @@ import './App.css'
 import Start from './screens/Start/Start';
 import Second from './screens/Second/Second';
 
+enum categoriesExpenses {
+  savings = "Savings",
+  food = "Food",
+  miscellaneousExpenses = "Miscellaneous Expenses",
+  leisure = "Leisure",
+  health = "Health",
+  subscriptions = "Subscriptions"
+
+}
+
+export interface expenseType {
+  expenseName: string,
+  amount: number,
+  category: categoriesExpenses,
+  expenseDate: string | Date
+}
+
 const App: React.FC = () => {
   //Estado de manejo de pantallas
   const [pageId, setPageId] = useState("Start")
@@ -11,7 +28,8 @@ const App: React.FC = () => {
   const [budget, setBudget] = useState(0)
 
   //Estado del expenses
-  const [expenses, setExpenses] = useState(0)
+  const [expenses, setExpenses] = useState<Array<expenseType>>([])
+  console.log(expenses)
 
   //Estado del expenses
   const [showAddExpensesModal, setShowAddExpensesModal] = useState(false)
@@ -24,6 +42,13 @@ const App: React.FC = () => {
   //Funcion handle state page
   const HandlePage = (newPage: string) => {
     setPageId(newPage)
+  }
+
+  //Funcion handle state expenses
+  const handleExpenses = (newExpense: expenseType) => {
+    console.log("Old expenses:")
+    console.log(expenses)
+    setExpenses(prevExpense => [...prevExpense, newExpense])
   }
 
   //Funcion handle state page
@@ -46,7 +71,7 @@ const App: React.FC = () => {
     case "Second":
       return (
         <div className="app">
-          <Second handleBudget={HandleBudget} actualBudget={budget} handlePage={HandlePage} handleShowAddExpensesModal={handleShowAddExpensesModal}></Second>
+          <Second showModal={showAddExpensesModal} handleExpenses={handleExpenses} handleBudget={HandleBudget} actualBudget={budget} handlePage={HandlePage} handleShowAddExpensesModal={handleShowAddExpensesModal}></Second>
         </div>
       );
     default:
