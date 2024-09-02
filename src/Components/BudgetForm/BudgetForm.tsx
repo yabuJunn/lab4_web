@@ -19,7 +19,11 @@ const BudgetForm = ({ handleBudget, actualBudget, handlePage }: BudgetFormProps)
   };
 
   const handleButtonOnClick = () => {
-    handlePage("Second")
+    if (actualBudget > 0) {
+      handlePage("Second")
+    } else {
+      alert("Budget must be greater than zero")
+    }
   }
 
   return (

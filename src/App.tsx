@@ -10,12 +10,15 @@ const App: React.FC = () => {
   //Estado del budget
   const [budget, setBudget] = useState(0)
 
-  console.log(budget)
+  //Estado del expenses
+  const [expenses, setExpenses] = useState(0)
 
+  //Funcion handle state budget
   const HandleBudget = (newBudget: number) => {
     setBudget(newBudget)
   }
 
+  //Funcion handle state page
   const HandlePage = (newPage: string) => {
     setPageId(newPage)
   }
